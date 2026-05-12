@@ -15,11 +15,12 @@ Datenvisualisierung: Matplotlib, Seaborn
 Methodik: Agiles Projektmanagement, Explorative Datenanalyse (EDA)
 
 📈 Projektphasen (Agil & Iterativ)
-[x] Phase 1: Das Fundament (Abgeschlossen)
-Analyse der direkten Korrelation zwischen realer Lieferzeit (in Tagen) und den abgegebenen Sterne-Bewertungen der Kunden. Identifikation von Anomalien (z.B. sofortige Stornierungen).
 
-[ ] Phase 2: Die Kundenbindung (In Arbeit)
-Untersuchung der Wiederholungskäufer-Rate in Abhängigkeit der Erstbewertung. Ziel ist es, die direkte Verbindung zwischen initialer Unzufriedenheit und Abwanderung (Churn-Rate) aufzuzeigen.
+  [x] Phase 1: Das Fundament (Abgeschlossen)
+  Analyse der direkten Korrelation zwischen realer Lieferzeit (in Tagen) und den abgegebenen Sterne-Bewertungen der    Kunden. Identifikation von Anomalien (z.B. sofortige Stornierungen).
 
-[ ] Phase 3: Der Business-Impact (Geplant)
-Versuch der Quantifizierung des finanziellen Risikos durch ineffiziente Logistik-Ketten. Wie viel Umsatz geht dem Unternehmen durch verspätete Lieferungen potenziell verloren?
+  [ ] Phase 2: Die Kundenbindung (In Arbeit)
+  Untersuchung der Wiederholungskäufer-Rate in Abhängigkeit der Erstbewertung. Ziel ist es, die direkte Verbindung     zwischen initialer Unzufriedenheit und Abwanderung (Churn-Rate) aufzuzeigen.
+
+  [ ] Phase 3: Der Business-Impact (Geplant)
+  Versuch der Quantifizierung des finanziellen Risikos durch ineffiziente Logistik-Ketten. Wie viel Umsatz geht dem    Unternehmen durch verspätete Lieferungen potenziell verloren?
