@@ -16,7 +16,7 @@ Methodik: Agiles Projektmanagement, Explorative Datenanalyse (EDA)
 📈 Projektphasen (Agil & Iterativ)
 
 [x] Phase 1: Das Fundament (Abgeschlossen) Analyse der direkten Korrelation zwischen realer Lieferzeit (in Tagen) und den abgegebenen Sterne-Bewertungen der Kunden. Identifikation des generellen Unzufriedenheits-Trends.
-* 👉 [Klicke hier, um den Python-Code und die Daten für Teil 1 zu sehen](e-commerce-analyse-lieferzeit-und-kundenbindung.ipynb)
+* 👉 [Klicke hier, um den Python-Code und die Daten für Teil 1 zu sehen](e-commerce-datenanalyse-eda.ipynb)
 
 [x] Phase 2: Hypothesentest Kundenbindung (Abgeschlossen) Untersuchung der Wiederholungskäufer-Rate in Abhängigkeit der Erstbewertung. Ergebnis (Plot Twist): Widerlegung der Ausgangshypothese. Beweis durch Warenkorbanalysen, dass Olist primär langlebige Güter vertreibt und faktisch als Einmalkäufer-Marktplatz agiert.
 
