@@ -42,17 +42,13 @@ Dieses Projekt versucht, diese Frage mit echten Daten, statistischen Methoden un
 
 ## 🔬 Analyse-Struktur & Erkenntnisse
 
-Die Analyse ist in 5 aufeinander aufbauende Teile gegliedert, die jeweils eine konkrete Forschungsfrage mit echten Datenwerten beantworten.
-
 ---
 
 ### Teil 1 — Lieferzeit vs. Kundenzufriedenheit
 
 **Forschungsfrage:** Ab welchem Liefertag kippt die Bewertung ins Negative?
 
-**Methodik:** Für jeden einzelnen Liefertag wurde der Durchschnitt der Sternebewertungen berechnet (GroupBy + mean). Das Ergebnis wurde als Liniendiagramm über die ersten 30 Tage visualisiert.
-
-**Ergebnis:**
+**Methodik:** Für jeden einzelnen Liefertag wurde der Durchschnitt der Sternebewertungen berechnet (GroupBy + mean). Visualisiert als Liniendiagramm über die ersten 30 Tage.
 
 | Lieferzeit | Ø Bewertung |
 |-----------|-------------|
@@ -62,17 +58,17 @@ Die Analyse ist in 5 aufeinander aufbauende Teile gegliedert, die jeweils eine k
 | 20 Tage | ⭐ ~3.00 |
 | 30+ Tage | ⭐ < 2.50 |
 
-📉 **Kernaussage:** Die Zufriedenheit fällt nicht plötzlich — sie erodiert systematisch mit jedem zusätzlichen Tag. Das gibt dem Management einen klaren, messbaren Schwellenwert an die Hand.
+![Einfluss der Lieferzeiten](Einfluss%20der%20Lieferzeiten%20auf%20die%20Kundenzufriedenheit.png)
+
+![Eskalation der Kundenzufriedenheit](Eskalation%20der%20Kundenzufriedenheit.png)
+
+📉 **Kernaussage:** Die Zufriedenheit erodiert systematisch mit jedem zusätzlichen Tag — kein plötzlicher Absturz, sondern ein messbarer, linearer Verfall.
 
 ---
 
 ### Teil 2 — Kundenloyalität & das Einmalkäufer-Modell
 
-**Forschungsfrage:** Kaufen Kunden wirklich nur einmal — oder beeinflusst eine gute erste Erfahrung die Rückkehrrate?
-
-**Methodik:** Segmentierung aller Kunden nach Kaufhäufigkeit. Anschließender Vergleich der Bewertungsverteilung zwischen Einmalkäufern und Wiederkäufern.
-
-**Ergebnis:**
+**Forschungsfrage:** Beeinflusst eine gute erste Erfahrung die Rückkehrrate?
 
 | Bewertung | Einmalkäufer | Wiederkäufer |
 |-----------|-------------|--------------|
@@ -82,7 +78,11 @@ Die Analyse ist in 5 aufeinander aufbauende Teile gegliedert, die jeweils eine k
 | ⭐⭐ (2) | 3.19% | 3.08% |
 | ⭐ (1) | 11.53% | 11.61% |
 
-🔍 **Kernaussage:** Die Bewertungsverteilung zwischen Einmal- und Wiederkäufern ist nahezu identisch. Das beweist: Olist operiert **strukturell als Einmalkäufer-Plattform**. Retention wird nicht durch Ersterfahrung gesteuert — die Ursache liegt tiefer im Geschäftsmodell.
+![Sterne-Verteilung bei Einmalkäufern und Wiederkäufern](Sterne-Verteilung%20bei%20Einmalk%C3%A4ufern%20und%20Wiederk%C3%A4ufern.png)
+
+![Einfluss der ersten Bewertung auf den Wiederkauf](Einfluss%20der%20ersten%20Bewertung%20auf%20den%20Wiederkauf.png)
+
+🔍 **Kernaussage:** Die Bewertungsverteilung ist nahezu identisch. Olist operiert **strukturell als Einmalkäufer-Plattform** — Retention wird nicht durch Ersterfahrung gesteuert.
 
 ---
 
@@ -90,9 +90,11 @@ Die Analyse ist in 5 aufeinander aufbauende Teile gegliedert, die jeweils eine k
 
 **Forschungsfrage:** Was schadet mehr — ein langsames Paket oder ein gebrochenes Versprechen?
 
-**Methodik:** Berechnung der Differenz zwischen dem versprochenen Lieferdatum (`order_estimated_delivery_date`) und dem tatsächlichen Lieferdatum. Vergleich der Bewertungen bei: (a) pünktlicher Lieferung, (b) verspäteter, aber schneller Lieferung, (c) gebrochenen Versprechen.
+![Warum Unzuverlässigkeit gefährlicher ist als Lansamkeit](Warum%20Unzuverl%C3%A4ssigkeit%20gef%C3%A4hrlicher%20ist%20als%20Lansamkeit.png)
 
-**Kernaussage:** Ein gebrochenes Lieferversprechen erzeugt **toxischere Bewertungen** als absolute Langsamkeit. Der Kunde bestraft nicht die Dauer — er bestraft den **Vertrauensbruch**.
+![Der wahre Einfluss von Verspätungen auf toxische Bewertungen](Der%20wahre%20Einfluss%20von%20Versp%C3%A4tungen%20auf%20toxische%20Bewertungen.png)
+
+⚠️ **Kernaussage:** Ein gebrochenes Lieferversprechen erzeugt **toxischere Bewertungen** als absolute Langsamkeit. Der Kunde bestraft nicht die Dauer — er bestraft den **Vertrauensbruch**.
 
 ---
 
@@ -100,47 +102,11 @@ Die Analyse ist in 5 aufeinander aufbauende Teile gegliedert, die jeweils eine k
 
 **Forschungsfrage:** Welche Verkäufer gefährden das gesamte Plattform-Ökosystem?
 
-#### 4.1 — Asymmetrische Schadensverteilung
+**Pearson-Korrelation & Quadranten-Analyse:** 75.-Perzentil-Grenze als Trennlinie — trennt **Logistikversager** von **Produktversagern**.
 
-Wenige Minderperformer verzerren das algorithmische Gesamtbild der Plattform unverhältnismäßig stark.
+![Kausalanalyse Logistikversagen und Produktmängel](Kausalanalyse-%20Logistikversagen%20und%20Produktm%C3%A4ngel.png)
 
-#### 4.2 — Pearson-Korrelation & Quadranten-Analyse
+**Carrier vs. Verkäufer:** Der primäre Engpass liegt bei der **internen Bearbeitungszeit des Händlers** — nicht beim externen Carrier.
 
-**Methodik:** Pearson-Korrelation zwischen Verspätungsquote und Kritikerquote pro Verkäufer. 75.-Perzentil-Grenze als Trennlinie für Quadranten-Gruppierung.
-
-**Ergebnis:** Die Quadranten-Analyse trennt sauber: **Logistikversager** (hohe Verspätung, hohe Kritiker) vs. **Produktversager** (geringe Verspätung, aber trotzdem hohe Kritiker).
-
-#### 4.3 — Carrier vs. Verkäufer: Wer trägt die Schuld?
-
-**Kernaussage:** Der primäre Engpass liegt bei der **internen Bearbeitungszeit des Händlers** — nicht beim externen Carrier.
-
-#### 4.4 — Umsatzrelevanz der Risiko-Großhändler
-
-| Seller ID (gekürzt) | Bestellungen | Umsatz (BRL) | Kritikerquote |
-|--------------------|-------------|--------------|---------------|
-| 4a3ca9...884 | 1.949 | 197.225 | 32.1% |
-| 7c67e1...fab | 1.358 | 186.664 | 44.0% |
-| 1025f0...ffa | 1.422 | 138.691 | 28.6% |
-| 2eb702...378 | 195 | 37.750 | 61.5% |
-| 8846...930 | 308 | 32.108 | 41.6% |
-
-📌 **Kernaussage:** Ein Verkäufer mit 61.5% Kritikerquote ist kein Qualitätsproblem — er ist ein **systemisches Risiko**.
-
----
-
-### Teil 5 — Synthese & Strategischer Aktionsplan
-
-- **Lieferzeitgarantie:** Harte SLA-Grenze bei max. 10 Tagen einführen
-- **Erwartungsmanagement:** Lieferversprechen nur setzen, wenn Einhaltung statistisch gesichert ist
-- **Händler-Monitoring:** Automatisches Flagging bei Kritiker- oder Verspätungsquote > 75. Perzentil
-- **Carrier-Optimierung:** Fokus auf Händler-Bearbeitungszeit, nicht auf Carrier-Geschwindigkeit
-- **Umsatz-Risiko-Matrix:** Großhändler mit hohem Umsatz + hoher Kritikerquote priorisiert behandeln
-
----
-
-## 🚀 Notebook öffnen
-
-👉 [Kaggle Notebook](DEIN_KAGGLE_LINK_HIER)
-
-Oder lokal:
+![Wer verursacht die Lieferverspätungen bei Olist](Wer%20verursacht%20die%20Lieferversp%C3%A4tungen%20bei%20Olist.png)
 
