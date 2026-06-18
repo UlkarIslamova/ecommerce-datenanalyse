@@ -1,112 +1,138 @@
-# 📊 E-Commerce Datenanalyse: Logistik, Kundenzufriedenheit & Reputationsrisiken
+# 📊 E-Commerce Datenanalyse: Logistik, Kundenzufriedenheit und Reputationsrisiken
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-Visualisierung-4C72B0)
-![Kaggle](https://img.shields.io/badge/Kaggle-Notebook-20BEFF?logo=kaggle&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Work%20in%20Progress-orange)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7+-orange)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.12+-79C0FF)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
----
-
-## 🧭 Die Ausgangslage: Warum dieses Projekt?
-
-Im Online-Handel ist Neukundengewinnung teuer. Wenn Bestandskunden wegen schlechter Erfahrungen nicht wiederkommen, verliert eine Plattform stille, aber reale Umsätze.
-
-Olist ist ein brasilianischer E-Commerce-Marktplatz mit über 100.000 Bestellungen zwischen 2016 und 2018. Die Plattform verbindet Tausende Verkäufer mit Millionen Kunden. Genau deshalb stellt sich eine kritische Frage:
-
-> **Was zerstört Kundenzufriedenheit — und wer ist dafür verantwortlich?**
-
-Dieses Projekt versucht, diese Frage mit echten Daten, statistischen Methoden und klaren Visualisierungen zu beantworten.
+> **Full interactive notebook → [View on Kaggle](https://www.kaggle.com)**
+> *(replace this link with your actual Kaggle notebook URL)*
 
 ---
 
-## 📦 Datensatz
+## 📌 Project Goal
 
-- **Quelle:** [Olist Brazilian E-Commerce Public Dataset (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
-- **Umfang:** ~100.000 Bestellungen, 9 CSV-Dateien, Zeitraum 2016–2018
-- **Analysierte Datenpunkte:** Lieferzeiten, Kundenbewertungen (1–5 Sterne), Verkäuferleistung, Umsatzdaten, Retentionsverhalten
-
----
-
-## 🛠️ Tech Stack
-
-| Bereich | Tool |
-|---------|------|
-| Sprache | Python 3 |
-| Datenverarbeitung | Pandas, NumPy |
-| Visualisierung | Matplotlib, Seaborn |
-| Methodik | EDA, Pearson-Korrelation, Perzentil-Analyse, Quadranten-Gruppierung |
-| Umgebung | Kaggle Notebook |
+A data-driven investigation of the causal relationships between logistics, seller quality,
+and customer satisfaction on the **Olist** Brazilian e-commerce platform.
+The analysis decodes the mathematical dynamics between operational metrics and user ratings
+to provide a solid foundation for strategic management decisions.
 
 ---
 
-## 🔬 Analyse-Struktur & Erkenntnisse
+## 🗂 Dataset
+
+[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+
+Download the CSV files and place them in a `data/` folder (excluded from Git via `.gitignore`).
 
 ---
 
-### Teil 1 — Lieferzeit vs. Kundenzufriedenheit
+## 🛠 Tech Stack
 
-**Forschungsfrage:** Ab welchem Liefertag kippt die Bewertung ins Negative?
-
-**Methodik:** Für jeden einzelnen Liefertag wurde der Durchschnitt der Sternebewertungen berechnet (GroupBy + mean). Visualisiert als Liniendiagramm über die ersten 30 Tage.
-
-| Lieferzeit | Ø Bewertung |
-|-----------|-------------|
-| 1 Tag | ⭐ 4.50 |
-| 5 Tage | ⭐ 4.39 |
-| 10 Tage | ⭐ 4.20 |
-| 20 Tage | ⭐ ~3.00 |
-| 30+ Tage | ⭐ < 2.50 |
-
-![Einfluss der Lieferzeiten](Einfluss%20der%20Lieferzeiten%20auf%20die%20Kundenzufriedenheit.png)
-
-![Eskalation der Kundenzufriedenheit](Eskalation%20der%20Kundenzufriedenheit.png)
-
-📉 **Kernaussage:** Die Zufriedenheit erodiert systematisch mit jedem zusätzlichen Tag — kein plötzlicher Absturz, sondern ein messbarer, linearer Verfall.
+| Tool | Purpose |
+|---|---|
+| Python 3.10+ | Core language |
+| Pandas, NumPy | Data manipulation |
+| Matplotlib, Seaborn | Visualization |
+| Jupyter Notebook | Analysis environment |
 
 ---
 
-### Teil 2 — Kundenloyalität & das Einmalkäufer-Modell
+## 🔬 Research Questions
 
-**Forschungsfrage:** Beeinflusst eine gute erste Erfahrung die Rückkehrrate?
-
-| Bewertung | Einmalkäufer | Wiederkäufer |
-|-----------|-------------|--------------|
-| ⭐⭐⭐⭐⭐ (5) | 57.59% | 59.36% |
-| ⭐⭐⭐⭐ (4) | 19.45% | 17.85% |
-| ⭐⭐⭐ (3) | 8.25% | 8.09% |
-| ⭐⭐ (2) | 3.19% | 3.08% |
-| ⭐ (1) | 11.53% | 11.61% |
-
-![Sterne-Verteilung bei Einmalkäufern und Wiederkäufern](Sterne-Verteilung%20bei%20Einmalk%C3%A4ufern%20und%20Wiederk%C3%A4ufern.png)
-
-![Einfluss der ersten Bewertung auf den Wiederkauf](Einfluss%20der%20ersten%20Bewertung%20auf%20den%20Wiederkauf.png)
-
-🔍 **Kernaussage:** Die Bewertungsverteilung ist nahezu identisch. Olist operiert **strukturell als Einmalkäufer-Plattform** — Retention wird nicht durch Ersterfahrung gesteuert.
+| Teil | Forschungsfrage |
+|---|---|
+| **1** | How does customer satisfaction scale with each additional delivery day — and at which point does the rating turn negative? |
+| **2** | Does the first order experience influence retention, or does Olist structurally operate as a pure single-buyer model? |
+| **3** | What triggers toxic reviews more: absolute delivery slowness, or the mathematical breach of the promised delivery date? |
+| **4** | What financial and reputational impact do low-performing sellers have on the overall platform ecosystem? |
+| **4.1** | How unequally is reputational damage distributed, and to what degree do a few outliers distort the overall satisfaction picture? |
+| **4.2** | How strong is the statistical dependency between late-delivery rate and critic rate (Pearson correlation), and how can product defects be isolated from logistics failures? |
+| **4.3** | Who bears the statistical blame for hard delivery delays: the seller's internal processing time or the carrier's transport chain? |
+| **4.4** | What exact financial volume do the identified high-risk large sellers control, and what is the economic leverage of these outliers on the system? |
+| **5** | How can the empirically proven data points be used strategically to secure platform revenue and protect new customer acquisition from quality deficits? |
 
 ---
 
-### Teil 3 — Erwartungsbruch: Das gebrochene Lieferversprechen
+## 📊 Key Findings
 
-**Forschungsfrage:** Was schadet mehr — ein langsames Paket oder ein gebrochenes Versprechen?
-
-![Warum Unzuverlässigkeit gefährlicher ist als Lansamkeit](Warum%20Unzuverl%C3%A4ssigkeit%20gef%C3%A4hrlicher%20ist%20als%20Lansamkeit.png)
-
-![Der wahre Einfluss von Verspätungen auf toxische Bewertungen](Der%20wahre%20Einfluss%20von%20Versp%C3%A4tungen%20auf%20toxische%20Bewertungen.png)
-
-⚠️ **Kernaussage:** Ein gebrochenes Lieferversprechen erzeugt **toxischere Bewertungen** als absolute Langsamkeit. Der Kunde bestraft nicht die Dauer — er bestraft den **Vertrauensbruch**.
+- **Delivery time is the #1 satisfaction driver.** Average rating drops steadily from 4.5 stars (1-day delivery) toward critical levels beyond 20 days.
+- **Olist operates as a single-buyer platform.** ~97% of customers never place a second order, regardless of their rating — structural, not quality-driven.
+- **Expectation breach matters more than absolute speed.** Deliveries that arrive after the promised date drive far more 1-star reviews than simply slow deliveries.
+- **63.77% of all reputational damage** is generated by a small minority of underperforming sellers.
+- **Pearson correlation confirms** a strong link between late-delivery rate and critic rate among the worst-performing seller segment.
+- **The carrier, not the seller**, is the primary bottleneck in hard delivery delays — a critical distinction for platform intervention strategy.
 
 ---
 
-### Teil 4 — Verkäuferqualität & Reputationsrisiko
+## 📈 Visualizations
 
-**Forschungsfrage:** Welche Verkäufer gefährden das gesamte Plattform-Ökosystem?
+### Teil 1 – Lieferzeit vs. Kundenzufriedenheit
+![Teil 1](images/teil1_lieferzeit_vs_bewertung.png)
 
-**Pearson-Korrelation & Quadranten-Analyse:** 75.-Perzentil-Grenze als Trennlinie — trennt **Logistikversager** von **Produktversagern**.
+---
 
-![Kausalanalyse Logistikversagen und Produktmängel](Kausalanalyse-%20Logistikversagen%20und%20Produktm%C3%A4ngel.png)
+### Teil 2 – Wiederkäufer-Rate pro Stern
+![Teil 2a](images/teil2_wiederkaufer_rate_pro_stern.png)
 
-**Carrier vs. Verkäufer:** Der primäre Engpass liegt bei der **internen Bearbeitungszeit des Händlers** — nicht beim externen Carrier.
+### Teil 2 – Sterne-Verteilung: Einmalkäufer vs. Wiederkäufer
+![Teil 2b](images/teil2_sterne_verteilung_ein_vs_wiederkaufer.png)
 
-![Wer verursacht die Lieferverspätungen bei Olist](Wer%20verursacht%20die%20Lieferversp%C3%A4tungen%20bei%20Olist.png)
+---
 
+### Teil 3 – Logistischer Kipppunkt
+![Teil 3a](images/teil3_kipppunkt_logistik.png)
+
+### Teil 3 – Delta-Analyse: Verspätung vs. Erwartung
+![Teil 3b](images/teil3_delta_analyse_verspaetung.png)
+
+### Teil 3 – Absolute Zeit vs. Verspätung (Synthese)
+![Teil 3c](images/teil3_absolute_zeit_vs_verspaetung.png)
+
+---
+
+### Teil 4.2 – Korrelationsanalyse: Quadranten-Gruppierung der Verkäufer
+![Teil 4.2](images/teil4_2_korrelation_scatter_quadranten.png)
+
+### Teil 4.3 – Kausalanalyse: Carrier vs. Verkäufer
+![Teil 4.3](images/teil4_3_kausalanalyse_carrier_vs_verkaeufer.png)
+
+---
+
+## 🚀 How to Run Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/YOUR_USERNAME/ecommerce-eda.git
+cd ecommerce-eda
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Place Olist CSVs into data/
+mkdir data
+# download from https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+# 4. Open the notebook
+jupyter notebook e-commerce-datenanalyse-eda.ipynb
+```
+
+---
+
+## 📁 Repository Structure
+
+```
+├── images/                              ← all generated plots
+├── e-commerce-datenanalyse-eda.ipynb   ← full analysis notebook
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 👤 Author
+
+Built as part of a data analytics portfolio project.
+Full interactive version available on [Kaggle](https://www.kaggle.com).
