@@ -14,14 +14,14 @@ Das primäre Ziel dieses Projekts ist eine umfassende, datengestützte Untersuch
 ---
 
 ### 📑 Inhaltsverzeichnis
-- [Teil 1: Abhängigkeit zwischen Lieferzeit und Kundenzufriedenheit](#teil-1-abhängigkeit-zwischen-lieferzeit-und-kundenzufriedenheit)
-- [Teil 2: Untersuchung der Kundenloyalität und Validierung des Einmalkäufer Modells](#teil-2-untersuchung-der-kundenloyalität-und-validierung-des-einmalkäufer-modells)
-- [Teil 3: Analyse der Lieferverzögerung und mathematischer Nachweis des Erwartungsbruchs](#teil-3-analyse-der-lieferverzögerung-und-mathematischer-nachweis-des-erwartungsbruchs)
-- [Teil 4.1: Asymmetrische Verteilung des Reputationsschadens durch Minderperformer](#teil-41-asymmetrische-verteilung-des-reputationsschadens-durch-minderperformer)
-- [Teil 4.2: Korrelationsanalyse und perzentilbasierte Quadranten Gruppierung der Verkäufer](#teil-42-korrelationsanalyse-und-perzentilbasierte-quadranten-gruppierung-der-verkäufer)
-- [Teil 4.3: Kausalanalyse der logistischen Engpässe und Zuordnung der Verantwortung zwischen Carrier und Verkäufer](#teil-43-kausalanalyse-der-logistischen-engpässe-und-zuordnung-der-verantwortung-zwischen-carrier-und-verkäufer)
-- [Teil 4.4: Umsatzrelevanz minderperformanter Großhändler und Bewertung des Reputationsrisikos](#teil-44-umsatzrelevanz-minderperformanter-großhändler-und-bewertung-des-reputationsrisikos)
-- [Teil 5: Synthese der Ergebnisse und Strategischer Aktionsplan](#teil-5-synthese-der-ergebnisse-und-strategischer-aktionsplan)
+- Teil 1: Abhängigkeit zwischen Lieferzeit und Kundenzufriedenheit
+- Teil 2: Untersuchung der Kundenloyalität und Validierung des Einmalkäufer Modells
+- Teil 3: Analyse der Lieferverzögerung und mathematischer Nachweis des Erwartungsbruchs
+- Teil 4.1: Asymmetrische Verteilung des Reputationsschadens durch Minderperformer
+- Teil 4.2: Korrelationsanalyse und perzentilbasierte Quadranten Gruppierung der Verkäufer
+- Teil 4.3: Kausalanalyse der logistischen Engpässe und Zuordnung der Verantwortung zwischen Carrier und Verkäufer
+- Teil 4.4: Umsatzrelevanz minderperformanter Großhändler und Bewertung des Reputationsrisikos
+- Teil 5: Synthese der Ergebnisse und Strategischer Aktionsplan
 
 ---
 
