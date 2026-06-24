@@ -328,6 +328,6 @@ Die strategische Roadmap gliedert sich in folgende konkrete Kern-Empfehlungen:
 
 Das vollständige und interaktive Datenanalyse-Notebook inklusive des gesamten Python-Codes findest du direkt auf Kaggle:
 
-[![Kaggle](https://img.shields.io/badge/Kaggle-008bb9?style=for-the-badge&logo=kaggle&logoColor=white)](HIER_DEINEN_KAGGLE_LINK_EINFÜGEN)
+[![Kaggle](https://img.shields.io/badge/Kaggle-008bb9?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/code/ulkarislamova/e-commerce-datenanalyse-eda)
 
-👉 **[Klicke hier, um das komplette Kaggle-Notebook zu öffnen](https://www.kaggle.com/code/ulkarislamova/e-commerce-datenanalyse-eda)**
+
